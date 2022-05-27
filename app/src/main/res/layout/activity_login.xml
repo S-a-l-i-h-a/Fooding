@@ -69,4 +69,25 @@
         andorid:layout_constraintStart_toStartOf="parent"
         andorid:layout_constraintTop_toBottomOf="@+id/password" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Don't have an account?"
+        andorid:layout_constraintEnd_toEndOf="parent"
+        andorid:layout_constraintStart_toStartOf="parent"
+        andorid:layout_constraintTop_toBottomOf="@+id/login_button" />
+
+    <Button
+        android:id="@+id/register_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="REGISTER"
+        andorid:layout_constraintEnd_toEndOf="parent"
+        andorid:layout_constraintHorizontal_bias="0.498"
+        andorid:layout_constraintStart_toStartOf="parent"
+        andorid:layout_constraintTop_toBottomOf="@+id/textView4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

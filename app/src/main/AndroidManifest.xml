@@ -13,18 +13,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fooding">
         <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:parentActivityName=".Homescreen"/>
+        <activity
+            android:name=".ScannerActivity"
+            android:exported="false"
+            android:parentActivityName=".Homescreen"
+            />
+
+        <activity
             android:name=".Homescreen"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Homescreen"/>
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
 
         <activity
-            android:name=".RegisterActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
