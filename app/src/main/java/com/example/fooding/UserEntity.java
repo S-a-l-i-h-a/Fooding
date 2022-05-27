@@ -7,17 +7,24 @@ import androidx.room.PrimaryKey;
 
 @Entity (tableName = "users")
 public class UserEntity {
+    
     @PrimaryKey(autoGenerate = true)
     Integer id;
 
-    @ColumnInfo(name = "userId")
-    String userId;
+    @ColumnInfo(name = "username")
+    String username;
 
     @ColumnInfo(name = "password")
     String password;
 
-    @ColumnInfo(name = "name")
-    String name;
+    @ColumnInfo(name = "email")
+    String email;
+
+    @ColumnInfo(name = "diet")
+    String diet;
+
+    @ColumnInfo(name = "diabetes")
+    String diabetes;
 
     public Integer getId() {
         return id;
@@ -27,12 +34,12 @@ public class UserEntity {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -43,11 +50,27 @@ public class UserEntity {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDiet() {
+        return diet;
+    }
+
+    public void setDiet(String diet) {
+        this.diet = diet;
+    }
+
+    public String getDiabetes() {
+        return diabetes;
+    }
+
+    public void setDiabetes(String diabetes) {
+        this.diabetes = diabetes;
     }
 }
