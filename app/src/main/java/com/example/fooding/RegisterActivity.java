@@ -13,31 +13,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-    }
+
+
 
     // Spinner element
     Spinner spinner = (Spinner) findViewById(R.id.spinner_diet);
 
     // Spinner click listener
-      spinner
+    spinner.setOnItemSelectedListener(this);
 
     // Spinner Drop down elements
     List<String> categories = new ArrayList<String>();
-      categories.add("Automobile");
-      categories.add("Business Services");
-      categories.add("Computers");
-      categories.add("Education");
-      categories.add("Personal");
-      categories.add("Travel");
+      categories.add("Vegan");
+      categories.add("Vegetarian");
+      categories.add("Pescatarian");
+      categories.add("Gluten-free");
+      categories.add("Dairy-free");
+      categories.add("No special preferences");
 
     // Creating adapter for spinner
-    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.activity_, categories);
+    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
 
     // Drop down layout style - list view with radio button
       dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
