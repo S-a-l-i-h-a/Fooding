@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.ClipData;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
@@ -11,6 +13,8 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.vision.CameraSource;
@@ -22,6 +26,7 @@ import java.io.IOException;
 
 public class ScannerActivity extends AppCompatActivity {
 
+    private static String item_number;
     private SurfaceView surfaceView;
     private BarcodeDetector barcodeDetector;
     private CameraSource cameraSource;
@@ -30,6 +35,7 @@ public class ScannerActivity extends AppCompatActivity {
     private ToneGenerator toneGen1;
     private TextView barcodeText;
     private String barcodeData;
+    Button go_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +46,15 @@ public class ScannerActivity extends AppCompatActivity {
         surfaceView = findViewById(R.id.surface_view);
         barcodeText = findViewById(R.id.barcode_text);
         initialiseDetectorsAndSources();
-        
+
+        go_button= findViewById(R.id.go_button);
+        go_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ScannerActivity.this, ItemActivity.class).putExtra("item_number", item_number));
+            }
+        });
+
     }
 
 
@@ -111,8 +125,11 @@ public class ScannerActivity extends AppCompatActivity {
                             } else {
 
                                 barcodeData = barcodes.valueAt(0).displayValue;
+                                item_number = barcodes.valueAt(0).toString();
+                                 //kako uzeti ovaj broj??? pitati amelu
                                 barcodeText.setText(barcodeData);
                                 toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
+
 
                             }
                         }

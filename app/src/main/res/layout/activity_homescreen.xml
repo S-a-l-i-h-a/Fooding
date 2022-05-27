@@ -22,12 +22,34 @@
         android:id="@+id/scan_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         android:text="Scan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+    <FrameLayout
+        android:id="@+id/flFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"/>
 
     <Button
         android:id="@+id/choose_item_button"
@@ -45,7 +67,7 @@
         android:layout_width="171dp"
         android:layout_height="59dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="30dp"
         android:text="Welcome,"
         android:textAlignment="center"
         android:textSize="25dp"
@@ -58,7 +80,7 @@
         style="@style/TextAppearance.AppCompat.Headline"
         android:layout_width="122dp"
         android:layout_height="58dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="45dp"
         android:text=""
         android:textSize="25dp"
