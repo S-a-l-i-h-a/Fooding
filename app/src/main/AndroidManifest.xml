@@ -24,7 +24,7 @@
         <activity
             android:name=".ItemActivity"
             android:exported="false"
-            android:parentActivityName=".Homescreen"/>
+            android:parentActivityName=".ScannerActivity"/>
 
         <activity
             android:name=".ScannerActivity"
@@ -44,6 +44,16 @@
             android:name=".ScanCodeActivity"
             android:exported="false"
             android:parentActivityName=".Homescreen"/>
+
+        <activity
+            android:name=".RecipesListActivity"
+            android:exported="false"
+            android:parentActivityName=".ItemActivity"/>
+
+        <activity
+            android:name=".RecipeDetails"
+            android:exported="false"
+            android:parentActivityName=".RecipesListActivity"/>
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"

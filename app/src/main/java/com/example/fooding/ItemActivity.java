@@ -1,6 +1,11 @@
 package com.example.fooding;
 
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +16,8 @@ import java.util.Map;
 public class ItemActivity extends AppCompatActivity {
 
     public TextView item_number, ingredientname;
+    public ImageView image;
+    public Button see_recipes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +33,16 @@ public class ItemActivity extends AppCompatActivity {
         map.put("9781911223139", "bananas");
 
 
+
         String ingredient= map.get(result);
 
-        //initializing database
-       // RecipeDatabase recipeDatabase= RecipeDatabase.getRecipeDatabase(getApplicationContext());
-       // RecipeDao recipeDao= recipeDatabase.recipeDao();
+        //zasto ne radi?
+       /* if(ingredient== "banana") {
+            image = (ImageView) findViewById(R.id.image);
+            Resources res = getResources();
+            image.setImageDrawable(res.getDrawable(R.drawable.banana));
+        } */
+
 
         //adding to database
         RecipeEntity recipe1= new RecipeEntity(1, "bananas", "yes", "yes", "yes", "yes", "yes", "yes");
@@ -41,8 +53,15 @@ public class ItemActivity extends AppCompatActivity {
         ingredientname= findViewById(R.id.ingredientname);
         ingredientname.setText(result1.getDairyfree());
 
-
-
+        see_recipes= (Button) findViewById(R.id.see_recipes);
+        see_recipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(ItemActivity.this, RecipesListActivity.class);
+                intent.putExtra("ingredient", ingredient);
+                startActivity(intent);
+            }
+        });
     }
 
 
