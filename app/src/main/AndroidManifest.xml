@@ -22,6 +22,11 @@
             android:parentActivityName=".Homescreen"/>
 
         <activity
+            android:name=".ItemActivity"
+            android:exported="false"
+            android:parentActivityName=".Homescreen"/>
+
+        <activity
             android:name=".ScannerActivity"
             android:exported="false"
             android:parentActivityName=".Homescreen" />

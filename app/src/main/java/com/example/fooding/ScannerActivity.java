@@ -10,8 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ScannerActivity extends AppCompatActivity {
+
     public static TextView resulttextview;
-    Button scanbutton, buttontoast;
+    Button scanbutton, view_item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,6 @@ public class ScannerActivity extends AppCompatActivity {
 
         resulttextview = findViewById(R.id.barcodetextview);
         scanbutton = findViewById(R.id.buttonscan);
-        buttontoast = findViewById(R.id.buttontoast);
 
         scanbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,11 +29,16 @@ public class ScannerActivity extends AppCompatActivity {
             }
         });
 
-        buttontoast.setOnClickListener(new View.OnClickListener() {
+        view_item= findViewById(R.id.view_item);
+        view_item.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(ScannerActivity.this, resulttextview.getText(), Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                String message= resulttextview.getText().toString();
+                Intent intent= new Intent(getApplicationContext(), ItemActivity.class);
+                intent.putExtra("item_number", message);
+                startActivity(intent);
             }
         });
+
     }
 }

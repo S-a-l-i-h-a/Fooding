@@ -14,6 +14,7 @@ import com.google.zxing.Result;
 public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     int MY_PERMISSIONS_REQUEST_CAMERA=0;
 
+    String number;
     ZXingScannerView scannerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
