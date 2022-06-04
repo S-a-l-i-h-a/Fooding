@@ -60,7 +60,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="284dp"
         android:text="Login"
@@ -73,9 +72,10 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="44dp"
         android:text="Don't have an account?"
         andorid:layout_constraintEnd_toEndOf="parent"
+        andorid:layout_constraintHorizontal_bias="0.498"
         andorid:layout_constraintStart_toStartOf="parent"
         andorid:layout_constraintTop_toBottomOf="@+id/login_button" />
 
@@ -83,11 +83,13 @@
         android:id="@+id/register_button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="REGISTER"
+        andorid:layout_constraintBottom_toBottomOf="parent"
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintHorizontal_bias="0.498"
         andorid:layout_constraintStart_toStartOf="parent"
-        andorid:layout_constraintTop_toBottomOf="@+id/textView4" />
+        andorid:layout_constraintTop_toBottomOf="@+id/textView4"
+        andorid:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
