@@ -15,16 +15,16 @@ public class RecipeDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_details);
 
-        imageView = findViewById(R.id.news_image);
-        title = findViewById(R.id.news_title);
-        description = findViewById(R.id.news_description);
+        imageView = findViewById(R.id.ingredient_image);
+        title = findViewById(R.id.recipe_title);
+        description = findViewById(R.id.recipe_description);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             setTitle("Banana");
             imageView.setImageResource(R.drawable.banana);
             title.setText(extras.getString(RecipesListActivity.EXTRA_ID));
-            description.setText(extras.getString(RecipesListActivity.EXTRA_VEGAN));
+          //  description.setText(extras.getString(RecipesListActivity.EXTRA_VEGAN));
         }
     }
 }

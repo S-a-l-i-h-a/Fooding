@@ -4,6 +4,8 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import java.util.List;
+
 @Dao
 public interface RecipeDao {
 
@@ -11,5 +13,5 @@ public interface RecipeDao {
     void add (RecipeEntity recipeEntity);
 
     @Query("SELECT * FROM recipes WHERE keyProduct=(:productname)")
-    RecipeEntity search(String productname);
+    List<RecipeEntity> search(String productname);
 }

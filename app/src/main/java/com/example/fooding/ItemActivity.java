@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ItemActivity extends AppCompatActivity {
@@ -36,22 +37,22 @@ public class ItemActivity extends AppCompatActivity {
 
         String ingredient= map.get(result);
 
-        //zasto ne radi?
-       /* if(ingredient== "banana") {
+        //ne radi??
+       if(ingredient== "banana") {
             image = (ImageView) findViewById(R.id.image);
             Resources res = getResources();
             image.setImageDrawable(res.getDrawable(R.drawable.banana));
-        } */
+        }
 
 
         //adding to database
-        RecipeEntity recipe1= new RecipeEntity(1, "bananas", "yes", "yes", "yes", "yes", "yes", "yes");
+        RecipeEntity recipe1= new RecipeEntity("bananas", "yes", "yes", "yes", "yes", "yes", "yes");
         RecipeDatabase.getInstance(this).recipeDao().add(recipe1);
 
-        RecipeEntity result1= RecipeDatabase.getInstance(this).recipeDao().search(ingredient);
+        List<RecipeEntity> results= RecipeDatabase.getInstance(this).recipeDao().search(ingredient);
 
         ingredientname= findViewById(R.id.ingredientname);
-        ingredientname.setText(result1.getDairyfree());
+        ingredientname.setText(results.get(0).getKeyProduct());
 
         see_recipes= (Button) findViewById(R.id.see_recipes);
         see_recipes.setOnClickListener(new View.OnClickListener() {

@@ -25,9 +25,12 @@ public class RecipesListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_list);
         listView = findViewById(R.id.list_view_container);
         String ingredient= getIntent().getStringExtra("ingredient");
-        RecipeListViewAdapter recipeListViewAdapter= new RecipeListViewAdapter(getRecipes(ingredient),this);
+
+        List<RecipeEntity> recipeList = getRecipes(ingredient);
+
+        RecipeListViewAdapter recipeListViewAdapter= new RecipeListViewAdapter(recipeList,this);
         listView.setAdapter(recipeListViewAdapter);
-        listView.setOnItemClickListener(onItemClickListener);
+      //  listView.setOnItemClickListener(onItemClickListener);
     }
 
     private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
@@ -37,7 +40,7 @@ public class RecipesListActivity extends AppCompatActivity {
             Intent intent = new Intent(RecipesListActivity.this,RecipeDetails.class);
           //  intent.putExtra(EXTRA_IMAGE,recipe.getImageResId());
             intent.putExtra(EXTRA_ID, recipe.getId());
-            intent.putExtra(EXTRA_VEGAN, recipe.getVegan());
+          //  intent.putExtra(EXTRA_VEGAN, recipe.getVegan());
             startActivity(intent);
         }
     };
@@ -45,7 +48,7 @@ public class RecipesListActivity extends AppCompatActivity {
 
     private List<RecipeEntity> getRecipes(String ingredient){
         List<RecipeEntity> recipeList=new ArrayList<>();
-        recipeList.add(RecipeDatabase.getInstance(this).recipeDao().search(ingredient));
+        recipeList= RecipeDatabase.getInstance(this).recipeDao().search(ingredient);
         return recipeList;
     }
 

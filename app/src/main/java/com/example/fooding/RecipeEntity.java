@@ -31,8 +31,7 @@ public class RecipeEntity{
         @ColumnInfo(name = "dairyfree")
         String dairyfree;
 
-    public RecipeEntity(Integer id, String keyProduct, String diabetes, String vegan, String vegetarian, String pescatarian, String glutenfree, String dairyfree) {
-        this.id = id;
+    public RecipeEntity(String keyProduct, String diabetes, String vegan, String vegetarian, String pescatarian, String glutenfree, String dairyfree) {
         this.keyProduct = keyProduct;
         this.diabetes = diabetes;
         this.vegan = vegan;
