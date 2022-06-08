@@ -8,5 +8,11 @@
     <string name="health_condition">Enter your health condition</string>
     <string name="enter_health_condition">Enter Health Condition</string>
 
+    <string name="enter_e_mail">Enter E-mail</string>
+    <string name="login">Login</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="no_account_register_then">No account, register then</string>
+    <string name="register">Register</string>
+
 
 </resources>
