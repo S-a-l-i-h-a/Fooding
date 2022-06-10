@@ -20,10 +20,15 @@
         <entry key="..\:/Users/Amira/AndroidStudioProjects/Fooding/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2359375" />
         <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/drawable/rounded.xml" value="0.2265" />
         <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_homescreen.xml" value="0.22282608695652173" />
-        <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_item.xml" value="0.259375" />
+        <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_main.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_recipe_details.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_recipe_list.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_register.xml" value="0.22282608695652173" />
+        <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_scan_code.xml" value="0.259375" />
+        <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/activity_scanner.xml" value="0.259375" />
+        <entry key="..\:/Users/Saliha/AndroidStudioProjects/Fooding/app/src/main/res/layout/custom_list_view_item.xml" value="0.259375" />
         <entry key="..\:/Users/Saliha/Downloads/Fooding/app/src/main/res/layout/activity_main.xml" value="0.21240942028985507" />
       </map>
     </option>

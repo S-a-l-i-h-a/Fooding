@@ -35,7 +35,7 @@ public class ItemActivity extends AppCompatActivity {
 
         //map which maps product code to ingredient name
         Map<String, String> map= new HashMap<String, String>();
-        map.put("9781911223139", "bananas");
+        map.put("9781911223139", "banana");
 
 
 
