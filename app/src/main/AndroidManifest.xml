@@ -4,9 +4,9 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name= "android.hardware.camera"/>
-    <uses-feature android:name="android.hardware.camera.autofocus" />
 
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="false"
@@ -16,46 +16,56 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fooding">
 
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
 
+             To get one, follow the directions here:
 
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <activity
+            android:name=".MapActivity"
+            android:exported="false"
+            android:label="@string/title_activity_map" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
-            android:parentActivityName=".Homescreen"/>
-
+            android:parentActivityName=".Homescreen" />
         <activity
             android:name=".ItemActivity"
             android:exported="false"
-            android:parentActivityName=".ScannerActivity"/>
-
+            android:parentActivityName=".ScannerActivity" />
         <activity
             android:name=".ScannerActivity"
             android:exported="false"
             android:parentActivityName=".Homescreen" />
-
         <activity
             android:name=".Homescreen"
             android:exported="false" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="false"
-            android:parentActivityName=".Homescreen"/>
-
+            android:parentActivityName=".Homescreen" />
         <activity
             android:name=".ScanCodeActivity"
             android:exported="false"
-            android:parentActivityName=".Homescreen"/>
-
+            android:parentActivityName=".Homescreen" />
         <activity
             android:name=".RecipesListActivity"
             android:exported="false"
-            android:parentActivityName=".ItemActivity"/>
-
+            android:parentActivityName=".ItemActivity" />
         <activity
             android:name=".RecipeDetails"
             android:exported="false"
-            android:parentActivityName=".RecipesListActivity"/>
+            android:parentActivityName=".RecipesListActivity" />
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
@@ -70,7 +80,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

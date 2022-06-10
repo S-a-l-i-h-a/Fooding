@@ -25,6 +25,7 @@
     <string name="welcome_to_your_fit_n_journey">Welcome to your FIT \n journey!</string>
     <string name="lets_begin">LETS BEGIN !</string>
     <string name="todo">TODO</string>
+    <string name="title_activity_map">MapActivity</string>
 
 
 </resources>
