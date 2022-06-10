@@ -69,6 +69,7 @@ public class ItemActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= new Intent(ItemActivity.this, RecipesListActivity.class);
                 intent.putExtra("ingredient", ingredient);
+                intent.putExtra("diet", diet);
                 startActivity(intent);
             }
         });
