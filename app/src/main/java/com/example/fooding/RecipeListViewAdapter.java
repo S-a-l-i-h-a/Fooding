@@ -45,7 +45,7 @@ public class RecipeListViewAdapter extends BaseAdapter {
         TextView veganTextView = convertView.findViewById(R.id.recipe_vegan);
 
         imageView.setImageResource(R.drawable.banana);
-        idTextView.setText(recipe.getId().toString());
+        idTextView.setText(recipe.getName());
         veganTextView.setText(recipe.getVegan());
 
 

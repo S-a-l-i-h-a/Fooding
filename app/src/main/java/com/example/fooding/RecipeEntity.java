@@ -13,6 +13,9 @@ public class RecipeEntity{
         @ColumnInfo(name = "keyProduct")
         String keyProduct;
 
+        @ColumnInfo(name = "name")
+        String name;
+
         @ColumnInfo(name = "diabetes")
         String diabetes;
 
@@ -31,8 +34,9 @@ public class RecipeEntity{
         @ColumnInfo(name = "dairyfree")
         String dairyfree;
 
-    public RecipeEntity(String keyProduct, String diabetes, String vegan, String vegetarian, String pescatarian, String glutenfree, String dairyfree) {
+    public RecipeEntity(String keyProduct, String name, String diabetes, String vegan, String vegetarian, String pescatarian, String glutenfree, String dairyfree) {
         this.keyProduct = keyProduct;
+        this.name= name;
         this.diabetes = diabetes;
         this.vegan = vegan;
         this.vegetarian = vegetarian;
@@ -44,6 +48,8 @@ public class RecipeEntity{
     public Integer getId() {
         return id;
     }
+
+    public String getName() { return name; };
 
     public void setId(Integer id) {
         this.id = id;

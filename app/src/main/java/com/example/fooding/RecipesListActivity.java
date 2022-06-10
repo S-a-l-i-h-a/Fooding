@@ -19,15 +19,21 @@ public class RecipesListActivity extends AppCompatActivity {
     public static final String EXTRA_ID = "EXTRA_ID";
     public static final String EXTRA_VEGAN = "EXTRA_VEGAN";
     private ListView listView;
+    String diet;
+    List<RecipeEntity> recipeList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_list);
         listView = findViewById(R.id.list_view_container);
         String ingredient= getIntent().getStringExtra("ingredient");
-
-        List<RecipeEntity> recipeList = getRecipes(ingredient);
-
+        diet= getIntent().getStringExtra("diet");
+        if(diet=="Vegan") {
+            recipeList = getRecipesVegan(ingredient);
+        }
+        else{
+            recipeList= getRecipes(ingredient);
+        }
         RecipeListViewAdapter recipeListViewAdapter= new RecipeListViewAdapter(recipeList,this);
         listView.setAdapter(recipeListViewAdapter);
       //  listView.setOnItemClickListener(onItemClickListener);
@@ -49,6 +55,12 @@ public class RecipesListActivity extends AppCompatActivity {
     private List<RecipeEntity> getRecipes(String ingredient){
         List<RecipeEntity> recipeList=new ArrayList<>();
         recipeList= RecipeDatabase.getInstance(this).recipeDao().search(ingredient);
+        return recipeList;
+    }
+
+    private List<RecipeEntity> getRecipesVegan(String ingredient){
+        List<RecipeEntity> recipeList=new ArrayList<>();
+        recipeList= RecipeDatabase.getInstance(this).recipeDao().searchvegan(ingredient);
         return recipeList;
     }
 
