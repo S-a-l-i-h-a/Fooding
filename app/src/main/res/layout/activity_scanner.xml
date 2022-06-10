@@ -6,13 +6,24 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_height="match_parent"
+    android:background="@color/purple_700"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        app:srcCompat="@drawable/barcode" />
+
+    <TextView
         android:id="@+id/barcodetextview"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="Let's scan and see !"
+        android:textAlignment="center"
+        android:textColor="@color/textColor2"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -20,14 +31,16 @@
 
     <Button
         android:id="@+id/buttonscan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:textColor="@color/textColor2"
         android:text="ScanBarcode" />
 
     <Button
         android:id="@+id/view_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/textColor2"
         android:text="VIEW ITEM" />
 
 </LinearLayout>
