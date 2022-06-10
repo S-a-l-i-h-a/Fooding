@@ -15,12 +15,14 @@
         android:layout_width="423dp"
         android:layout_height="287dp"
         android:layout_marginTop="15dp"
+        android:contentDescription="@string/todo"
         andorid:layout_constraintBottom_toBottomOf="parent"
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintStart_toStartOf="parent"
         andorid:layout_constraintTop_toTopOf="parent"
         andorid:layout_constraintVertical_bias="1.0"
-        andorid:srcCompat="@drawable/art2" />
+        andorid:srcCompat="@drawable/art2"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/textView"
@@ -49,7 +51,7 @@
         android:layout_marginEnd="103dp"
         android:background="@drawable/rounded"
         android:ems="10"
-        android:hint="Enter Username"
+        android:hint="@string/enter_username"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColorHint="#757575"
@@ -57,7 +59,8 @@
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintHorizontal_bias="0.507"
         andorid:layout_constraintStart_toStartOf="parent"
-        andorid:layout_constraintTop_toBottomOf="@+id/textView" />
+        andorid:layout_constraintTop_toBottomOf="@+id/textView"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/email"
@@ -68,7 +71,7 @@
         android:layout_marginEnd="103dp"
         android:background="@drawable/rounded"
         android:ems="10"
-        android:hint="Enter Email"
+        android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:textColorHint="#757575"
@@ -76,7 +79,8 @@
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintHorizontal_bias="0.515"
         andorid:layout_constraintStart_toStartOf="parent"
-        andorid:layout_constraintTop_toBottomOf="@+id/username" />
+        andorid:layout_constraintTop_toBottomOf="@+id/username"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/diabetes"
@@ -87,7 +91,7 @@
         android:layout_marginEnd="103dp"
         android:background="@drawable/rounded"
         android:ems="10"
-        android:hint="Diabetes? (Y/N)"
+        android:hint="@string/diabetes_y_n"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColorHint="#757575"
@@ -95,7 +99,8 @@
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintHorizontal_bias="0.396"
         andorid:layout_constraintStart_toStartOf="parent"
-        andorid:layout_constraintTop_toBottomOf="@+id/spinner_diet" />
+        andorid:layout_constraintTop_toBottomOf="@+id/spinner_diet"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/register_button"
@@ -104,12 +109,13 @@
         android:layout_marginStart="158dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="159dp"
-        android:text="Register"
+        android:text="@string/register"
+        android:textColor="#880E4F"
         andorid:layout_constraintBottom_toTopOf="@+id/imageView4"
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintStart_toStartOf="parent"
         andorid:layout_constraintTop_toBottomOf="@+id/diabetes"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/password"
@@ -120,7 +126,7 @@
         android:layout_marginEnd="103dp"
         android:background="@drawable/rounded"
         android:ems="10"
-        android:hint="Enter password"
+        android:hint="@string/enter_password_register"
         android:inputType="textPassword"
         android:textAlignment="center"
         android:textColorHint="#757575"
@@ -128,7 +134,8 @@
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintHorizontal_bias="0.462"
         andorid:layout_constraintStart_toStartOf="parent"
-        andorid:layout_constraintTop_toBottomOf="@+id/email" />
+        andorid:layout_constraintTop_toBottomOf="@+id/email"
+        android:autofillHints="" />
 
     <Spinner
         android:id="@+id/spinner_diet"
@@ -152,12 +159,14 @@
         android:layout_marginStart="158dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="159dp"
-        android:text="Login"
+        android:text="@string/login"
+        android:textColor="#F1ECEF"
         andorid:layout_constraintBottom_toBottomOf="parent"
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintStart_toStartOf="parent"
         andorid:layout_constraintTop_toBottomOf="@+id/register_button"
-        andorid:layout_constraintVertical_bias="0.076" />
+        andorid:layout_constraintVertical_bias="0.076"
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView5"
@@ -165,7 +174,7 @@
         android:layout_height="41dp"
         android:layout_marginTop="29dp"
         android:background="@drawable/rounded"
-        android:text="Already have account?"
+        android:text="@string/already_have_account"
         android:textAlignment="center"
         android:textSize="15sp"
         android:textStyle="bold"

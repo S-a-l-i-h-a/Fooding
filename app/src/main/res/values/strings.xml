@@ -9,10 +9,22 @@
     <string name="enter_health_condition">Enter Health Condition</string>
 
     <string name="enter_e_mail">Enter E-mail</string>
-    <string name="login">Login</string>
     <string name="enter_password">Enter Password</string>
     <string name="no_account_register_then">No account, register then</string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="diabetes_y_n">Diabetes? (Y/N)</string>
     <string name="register">Register</string>
+    <string name="enter_password_register">Enter password</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password_login">Enter password</string>
+    <string name="loginpicture">loginpicture</string>
+    <string name="login">Login</string>
+    <string name="register_if_no_account">REGISTER</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="welcome_to_your_fit_n_journey">Welcome to your FIT \n journey!</string>
+    <string name="lets_begin">LETS BEGIN !</string>
+    <string name="todo">TODO</string>
 
 
 </resources>
