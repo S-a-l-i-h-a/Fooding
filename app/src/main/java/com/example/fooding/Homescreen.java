@@ -38,10 +38,10 @@ public class Homescreen extends AppCompatActivity {
 
                 switch(item.getItemId())
                 {
-                  /*  case R.id.map:
+                    case R.id.map:
                         startActivity(new Intent(getApplicationContext(),MapActivity.class));
                         overridePendingTransition(0,0);
-                        return true; */
+                        return true;
                     case R.id.home:
                         return true;
                   /*  case R.id.profile:
