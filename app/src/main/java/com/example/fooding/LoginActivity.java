@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText username, password;
     Button login_button;
     Button register_button2;
+    String diet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         password= findViewById(R.id.password);
         login_button= findViewById(R.id.login_button);
         register_button2= findViewById(R.id.register_button2);
+        diet= getIntent().getStringExtra("diet");
 
         register_button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                                 });
                             } else {
                                 String name= userEntity.username;
-                                startActivity(new Intent(LoginActivity.this, Homescreen.class).putExtra("name", name));
+                                startActivity(new Intent(LoginActivity.this, Homescreen.class).putExtra("name", name).putExtra("diet", diet));
                             }
                         }
                     }).start();

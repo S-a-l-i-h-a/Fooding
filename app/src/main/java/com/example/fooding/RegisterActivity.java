@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class).putExtra("diet", spinner_diet.getSelectedItem().toString()));
             }
         });
 

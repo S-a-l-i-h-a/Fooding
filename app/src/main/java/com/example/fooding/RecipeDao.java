@@ -14,4 +14,7 @@ public interface RecipeDao {
 
     @Query("SELECT * FROM recipes WHERE keyProduct=(:productname)")
     List<RecipeEntity> search(String productname);
+
+    @Query("SELECT * FROM recipes WHERE keyProduct=(:productname) AND vegan='yes'")
+    List<RecipeEntity> searchvegan(String productname);
 }
