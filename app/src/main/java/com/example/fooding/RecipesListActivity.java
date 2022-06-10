@@ -15,9 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipesListActivity extends AppCompatActivity {
-  // public static final String EXTRA_IMAGE = "EXTRA_IMAGE";
-    public static final String EXTRA_ID = "EXTRA_ID";
-    public static final String EXTRA_VEGAN = "EXTRA_VEGAN";
+
     private ListView listView;
     String diet;
     List<RecipeEntity> recipeList;
@@ -28,15 +26,17 @@ public class RecipesListActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_view_container);
         String ingredient= getIntent().getStringExtra("ingredient");
         diet= getIntent().getStringExtra("diet");
-        if(diet=="Vegan") {
+        String vegan= "Vegan";
+        if(diet.equals(vegan)) {
             recipeList = getRecipesVegan(ingredient);
         }
         else{
             recipeList= getRecipes(ingredient);
         }
+
         RecipeListViewAdapter recipeListViewAdapter= new RecipeListViewAdapter(recipeList,this);
         listView.setAdapter(recipeListViewAdapter);
-      //  listView.setOnItemClickListener(onItemClickListener);
+        listView.setOnItemClickListener(onItemClickListener);
     }
 
     private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
@@ -44,9 +44,7 @@ public class RecipesListActivity extends AppCompatActivity {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             RecipeEntity recipe = (RecipeEntity) parent.getItemAtPosition(position);
             Intent intent = new Intent(RecipesListActivity.this,RecipeDetails.class);
-          //  intent.putExtra(EXTRA_IMAGE,recipe.getImageResId());
-            intent.putExtra(EXTRA_ID, recipe.getId());
-          //  intent.putExtra(EXTRA_VEGAN, recipe.getVegan());
+            intent.putExtra("recipe_name", recipe.getName());
             startActivity(intent);
         }
     };
