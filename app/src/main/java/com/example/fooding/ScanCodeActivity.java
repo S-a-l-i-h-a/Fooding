@@ -13,6 +13,7 @@ import com.google.zxing.Result;
 
 public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     int MY_PERMISSIONS_REQUEST_CAMERA=0;
+    String diet;
 
     String number;
     ZXingScannerView scannerView;
@@ -21,6 +22,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         super.onCreate(savedInstanceState);
         scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
+        diet= getIntent().getStringExtra("diet");
     }
 
     @Override

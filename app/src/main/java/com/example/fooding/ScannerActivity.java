@@ -13,11 +13,13 @@ public class ScannerActivity extends AppCompatActivity {
 
     public static TextView resulttextview;
     Button scanbutton, view_item;
+    String diet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
+        diet= getIntent().getStringExtra("diet");
 
         resulttextview = findViewById(R.id.barcodetextview);
         scanbutton = findViewById(R.id.buttonscan);
@@ -34,7 +36,7 @@ public class ScannerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String message= resulttextview.getText().toString();
-                Intent intent= new Intent(getApplicationContext(), ItemActivity.class);
+                Intent intent= new Intent(getApplicationContext(), ItemActivity.class).putExtra("diet", diet);
                 intent.putExtra("item_number", message);
                 startActivity(intent);
             }

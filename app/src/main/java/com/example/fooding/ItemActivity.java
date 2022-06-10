@@ -19,11 +19,15 @@ public class ItemActivity extends AppCompatActivity {
     public TextView item_number, ingredientname;
     public ImageView image;
     public Button see_recipes;
+    String diet;
+    List<RecipeEntity> results;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
+
+        diet= getIntent().getStringExtra("diet");
 
         item_number = findViewById(R.id.item_number);
         String result= getIntent().getStringExtra("item_number");
@@ -39,18 +43,23 @@ public class ItemActivity extends AppCompatActivity {
 
         //ne radi??
        if(ingredient== "banana") {
-            image = (ImageView) findViewById(R.id.image);
-            Resources res = getResources();
-            image.setImageDrawable(res.getDrawable(R.drawable.banana));
+           image = (ImageView) findViewById(R.id.image);
+           int resourceImage = this.getResources().getIdentifier("banana", "drawable", this.getPackageName());
+           image.setImageResource(resourceImage);
+
         }
 
 
         //adding to database
-        RecipeEntity recipe1= new RecipeEntity("bananas", "yes", "yes", "yes", "yes", "yes", "yes");
+        RecipeEntity recipe1= new RecipeEntity("banana shake", "yes", "yes", "yes", "yes", "yes", "yes");
         RecipeDatabase.getInstance(this).recipeDao().add(recipe1);
 
-        List<RecipeEntity> results= RecipeDatabase.getInstance(this).recipeDao().search(ingredient);
-
+        if(diet=="Vegan"){
+           results= RecipeDatabase.getInstance(this).recipeDao().searchvegan(ingredient);
+        }
+        else {
+           results= RecipeDatabase.getInstance(this).recipeDao().search(ingredient);
+        }
         ingredientname= findViewById(R.id.ingredientname);
         ingredientname.setText(results.get(0).getKeyProduct());
 

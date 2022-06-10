@@ -17,11 +17,13 @@ public class Homescreen extends AppCompatActivity {
 
     TextView tName;
     Button scan_button;
+    String diet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
+        diet= getIntent().getStringExtra("diet");
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -62,11 +64,13 @@ public class Homescreen extends AppCompatActivity {
         String name= getIntent().getStringExtra("name");
         tName.setText(name);
 
+
+
         scan_button= findViewById(R.id.scan_button);
         scan_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Homescreen.this, ScannerActivity.class));
+                startActivity(new Intent(Homescreen.this, ScannerActivity.class).putExtra("diet", diet));
             }
         });
 
