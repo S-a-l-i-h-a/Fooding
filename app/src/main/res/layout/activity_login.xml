@@ -56,8 +56,8 @@
         android:background="@drawable/rounded"
         android:ems="10"
         android:hint="Enter password"
-        android:textAlignment="center"
         android:inputType="textPassword"
+        android:textAlignment="center"
         andorid:layout_constraintBottom_toTopOf="@+id/login_button"
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintHorizontal_bias="0.504"
@@ -69,8 +69,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="159dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="250dp"
         android:text="Login"
         andorid:layout_constraintBottom_toBottomOf="parent"
         andorid:layout_constraintEnd_toEndOf="parent"
@@ -79,28 +80,31 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="166dp"
+        android:layout_height="29dp"
         android:layout_marginBottom="21dp"
+        android:background="@drawable/rounded"
         android:text="Don't have an account?"
+        android:textAlignment="center"
+        android:textStyle="bold"
         andorid:layout_constraintBottom_toTopOf="@+id/register_button2"
         andorid:layout_constraintEnd_toEndOf="parent"
-        andorid:layout_constraintHorizontal_bias="0.498"
         andorid:layout_constraintStart_toStartOf="parent"
-        andorid:layout_constraintTop_toBottomOf="@+id/login_button" />
+        andorid:layout_constraintTop_toBottomOf="@+id/login_button"
+        andorid:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/register_button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="150dp"
         android:text="REGISTER"
         andorid:layout_constraintBottom_toBottomOf="parent"
         andorid:layout_constraintEnd_toEndOf="parent"
         andorid:layout_constraintHorizontal_bias="0.498"
         andorid:layout_constraintStart_toStartOf="parent"
-        andorid:layout_constraintTop_toBottomOf="@+id/textView4"
-        andorid:layout_constraintVertical_bias="0.0" />
+        andorid:layout_constraintTop_toBottomOf="@+id/password"
+        andorid:layout_constraintVertical_bias="0.17" />
 
     <ImageView
         android:id="@+id/imageView3"
