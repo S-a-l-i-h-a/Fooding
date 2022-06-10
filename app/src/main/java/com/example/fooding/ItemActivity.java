@@ -41,18 +41,18 @@ public class ItemActivity extends AppCompatActivity {
 
         String ingredient= map.get(result);
 
-        //ne radi??
+        //mozda radi?
        if(ingredient== "banana") {
            image = (ImageView) findViewById(R.id.image);
-           int resourceImage = this.getResources().getIdentifier("banana", "drawable", this.getPackageName());
-           image.setImageResource(resourceImage);
-
+           image.setImageResource(R.drawable.banana);
         }
 
 
         //adding to database
-        RecipeEntity recipe1= new RecipeEntity("banana shake", "yes", "yes", "yes", "yes", "yes", "yes");
+        RecipeEntity recipe1= new RecipeEntity("banana", "banana shake", "yes", "yes", "yes", "yes", "yes", "yes");
         RecipeDatabase.getInstance(this).recipeDao().add(recipe1);
+        RecipeEntity recipe2= new RecipeEntity("banana", "banana cake", "yes", "no", "yes", "yes", "yes", "yes");
+        RecipeDatabase.getInstance(this).recipeDao().add(recipe2);
 
         if(diet=="Vegan"){
            results= RecipeDatabase.getInstance(this).recipeDao().searchvegan(ingredient);
