@@ -54,7 +54,7 @@ public class ItemActivity extends AppCompatActivity {
         RecipeEntity recipe2= new RecipeEntity("banana", "banana cake", "yes", "no", "yes", "yes", "yes", "yes");
         RecipeDatabase.getInstance(this).recipeDao().add(recipe2);
 
-        if(diet=="Vegan"){
+        if(diet!=null && diet=="Vegan"){
            results= RecipeDatabase.getInstance(this).recipeDao().searchvegan(ingredient);
         }
         else {
@@ -62,6 +62,9 @@ public class ItemActivity extends AppCompatActivity {
         }
         ingredientname= findViewById(R.id.ingredientname);
         ingredientname.setText(results.get(0).getKeyProduct());
+        if(results.size()!=0){
+
+        }
 
         see_recipes= (Button) findViewById(R.id.see_recipes);
         see_recipes.setOnClickListener(new View.OnClickListener() {

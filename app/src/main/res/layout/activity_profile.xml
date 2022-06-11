@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_700">
+    android:background="#FF1070BC">
 
     <TextView
         android:id="@+id/textView6"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email address"
-        android:textColor="#CDCDCD"
+        android:textColor="@color/textColor"
         android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/user_email"
@@ -45,15 +45,15 @@
         android:layout_marginBottom="20dp"
         android:hint="Password"
         android:text="Password"
-        android:textColor="#CDCDCD"
+        android:textColor="@color/textColor"
         android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/user_password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_username"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView10"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:hint="Birth"
         android:text="Diabetes Info"
-        android:textColor="#CDCDCD"
+        android:textColor="@color/textColor"
         android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
-        android:textColor="#CDCDCD"
+        android:textColor="@color/textColor"
         android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/user_username"
@@ -84,21 +84,6 @@
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_email" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Joined"
-        android:text="Joined"
-        android:textColor="#CDCDCD"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diabetes_info"
-        app:layout_constraintVertical_bias="0.697" />
 
     <EditText
         android:id="@+id/user_email"
@@ -190,21 +175,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10.06.2022"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/diabetes_info"
-        app:layout_constraintVertical_bias="0.697" />
-
-    <TextView
         android:id="@+id/our_mission"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -214,6 +184,7 @@
         android:text="Diet Info"
         android:textColor="@color/textColor"
         android:textSize="17dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

@@ -27,7 +27,7 @@ public class RecipesListActivity extends AppCompatActivity {
         String ingredient= getIntent().getStringExtra("ingredient");
         diet= getIntent().getStringExtra("diet");
         String vegan= "Vegan";
-        if(diet.equals(vegan)) {
+        if(diet!=null && diet.equals(vegan)) {
             recipeList = getRecipesVegan(ingredient);
         }
         else{
