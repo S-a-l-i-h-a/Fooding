@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/purple_700"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/purple_700">
 
     <TextView
         android:id="@+id/item_number"
-        android:layout_width="100dp"
-        android:layout_height="28dp"
+        android:layout_width="127dp"
+        android:layout_height="32dp"
         android:textAlignment="center"
         android:textColor="@color/textColor"
-        android:textSize="10sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,14 +25,17 @@
         android:id="@+id/ingredientname"
         android:layout_width="118dp"
         android:layout_height="29dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="4dp"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_number" />
+        app:layout_constraintTop_toBottomOf="@+id/item_number"
+        app:layout_constraintVertical_bias="0.175" />
 
     <ImageView
         android:id="@+id/image"
@@ -48,20 +51,22 @@
 
     <TextView
         android:id="@+id/calories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="TextView"
+        android:layout_width="104dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginBottom="37dp"
+        android:background="@drawable/rounded"
+        android:text="105 calories"
         android:textAlignment="center"
-        android:textColor="@color/textColor"
-        android:textSize="10sp"
+        android:textColor="@color/textColor2"
+        android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientname"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/ingredientname" />
 
     <Button
         android:id="@+id/see_recipes"
@@ -87,9 +92,49 @@
         app:layout_constraintBottom_toTopOf="@+id/see_recipes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calories" />2
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calories" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="123dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="154dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded"
+        android:text="Barcode number "
+        android:textColor="@color/textColor2"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/item_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rounded"
+        android:text="Product"
+        android:textColor="@color/textColor2"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/ingredientname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_number" />2
+    android:textSize="20sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/calories" />
 </androidx.constraintlayout.widget.ConstraintLayout>

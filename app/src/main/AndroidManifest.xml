@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.fooding">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -17,7 +18,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fooding">
-
+        <activity
+            android:name=".InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".Homescreen" />
         <!--
               TODO: Before you run your application, you need a Google Maps API key.
 
@@ -36,7 +43,6 @@
         <activity
             android:name=".MapActivity"
             android:exported="false"
-            android:label="@string/title_activity_map"
             android:parentActivityName=".Homescreen" />
         <activity
             android:name=".RegisterActivity"

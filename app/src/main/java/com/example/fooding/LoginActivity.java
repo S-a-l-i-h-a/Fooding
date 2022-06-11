@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login_button;
     Button register_button2;
     String diet;
+    public static final String EXTRA_USER_EMAIL = "LoginActivity/EXTRA_USER_EMAIL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

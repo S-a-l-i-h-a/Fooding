@@ -30,7 +30,19 @@ public class RecipeDetails extends AppCompatActivity {
 
             imageView.setImageResource(R.drawable.bananashake);
 
-            description.setText("This text should write out a recipe for a banana shake.");
+            description.setText("Ingredients\n" +
+                    "250ml semi-skimmed milk\n" +
+                    "1scoop vanilla ice cream\n" +
+                    "2 bananas, chopped\n" +
+                    "50ml double cream, whipped\n" +
+                    "pinch cinnamon\n" +
+                    "a few dried banana chips\n" +
+                    "1 fresh cherry \n" +
+                    "\n" +
+                    "Method\n" +
+                    "STEP 1\n Put the milk, vanilla ice cream and banana into a blender. Whizz everything up until smooth then pour into a tall glass.\n" +
+                    "\n" +
+                    "STEP 2\n Top with a big spoonful of whipped cream and decorate with a pinch of cinnamon, some banana chips and a cherry. Serve immediately with a colourful straw.");
         }
 
         else{
@@ -39,7 +51,20 @@ public class RecipeDetails extends AppCompatActivity {
 
             imageView.setImageResource(R.drawable.bananacake);
 
-            description.setText("This text should write out a recipe for a banana cake.");
+            description.setText("Ingredients\n" +
+                    "125g butter\n" +
+                    "3/4 cup caster sugar\n" +
+                    "1 tsp vanilla essence\n" +
+                    "1 egg\n" +
+                    "2 bananas mashed ripe\n" +
+                    "1 1/2 cups self-raising flour\n" +
+                    "1/4 cup milk"  +
+                    " \n" +
+                    "Method" +
+                    "Melt the butter, sugar and vanilla in a medium-sized saucepan."+ "Remove from the heat." +
+                    "Add mashed bananas and stir through until just combined." + "Add egg and mix well. Stir in the flour, then pour in the milk and fold in lightly. Bake at 170C for approximately 40 minutes."
+
+            );
         }
     }
 }

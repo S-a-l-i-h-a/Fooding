@@ -170,7 +170,7 @@
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/who_are_we"
         android:layout_width="151dp"
         android:layout_height="41dp"
         android:layout_marginTop="29dp"

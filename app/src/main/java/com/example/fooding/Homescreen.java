@@ -2,7 +2,6 @@ package com.example.fooding;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,14 +43,14 @@ public class Homescreen extends AppCompatActivity {
                         return true;
                     case R.id.home:
                         return true;
-                  /*  case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),ScannerActivity.class));
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         overridePendingTransition(0,0);
-                        return true; */
-                 /*   case R.id.info:
+                        return true;
+                   case R.id.info:
                         startActivity(new Intent(getApplicationContext(),InfoActivity.class));
                         overridePendingTransition(0,0);
-                        return true; */
+                        return true;
                 }
                 return false;
             }
