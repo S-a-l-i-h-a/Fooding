@@ -1,7 +1,12 @@
 package com.example.fooding;
 
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +29,11 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     Spinner spinner_diet;
     Button register;
     Button login;
+
+    //notification
+    public static final String CHANNEL_ID="My channel";
+    public static final int NOT_ID=1;
+    //public boolean autoCancel = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +57,15 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 userEntity.setEmail(email.getText().toString());
                 userEntity.setDiabetes(diabetes.getText().toString());
                 userEntity.setDiet(spinner_diet.getSelectedItem().toString());
+
+                //channel for notification
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+                    NotificationChannel channel= new NotificationChannel(CHANNEL_ID, "My custom channel", NotificationManager.IMPORTANCE_DEFAULT);
+                    NotificationManager manager=getSystemService(NotificationManager.class);
+
+                    manager.createNotificationChannel(channel);
+                }
+
                 if (validateInput(userEntity)) {
                     //Do insert operation
                     UserDatabase userDatabase= UserDatabase.getUserDatabase(getApplicationContext());
@@ -57,7 +78,30 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                            runOnUiThread(new Runnable() {
                                @Override
                                public void run() {
-                                   Toast.makeText(getApplicationContext(), "User registered!", Toast.LENGTH_LONG).show();
+                                   //Toast.makeText(getApplicationContext(), "User registered!", Toast.LENGTH_LONG).show();
+
+                                   //notification
+
+                                   Intent intent= new Intent(RegisterActivity.this, LoginActivity.class);
+                                   PendingIntent pendingIntent= PendingIntent.getActivity(RegisterActivity.this, 0, intent, PendingIntent.FLAG_MUTABLE);
+
+                                   NotificationCompat.Builder builder=new NotificationCompat.Builder(RegisterActivity.this,CHANNEL_ID );
+
+                                   builder.setContentTitle("FOODING - Your way to a healthier diet")
+                                           .setContentText("You are now registered! Enjoy your journey with us.")
+                                           .setSmallIcon(R.drawable.ic_baseline_notifications_active_24)
+                                           //.setAutoCancel(true)
+                                           .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                                           .setColor(Color.RED)
+                                           .addAction(R.drawable.ic_baseline_snooze_24, "LOGIN", pendingIntent);
+
+
+
+                                   NotificationManagerCompat managerCompat = NotificationManagerCompat.from(RegisterActivity.this);
+                                   managerCompat.notify(NOT_ID, builder.build());
+
+
+
                                }
                            });
                         }

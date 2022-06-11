@@ -14,7 +14,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     EditText email, username, password, diabetes, diet;
     TextView name;
-    private String getEmail;
+    //private String getEmail;
 
     @SuppressLint("WrongViewCast")
     protected void onCreate(Bundle savedInstanceState) {
