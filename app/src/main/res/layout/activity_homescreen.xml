@@ -92,7 +92,6 @@
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/textColor"
-        android:fontFamily="sans-serif-condensed"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"

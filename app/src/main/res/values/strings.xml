@@ -26,6 +26,8 @@
     <string name="lets_begin">LETS BEGIN !</string>
     <string name="todo">TODO</string>
     <string name="title_activity_map">MapActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

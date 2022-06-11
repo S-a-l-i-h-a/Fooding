@@ -15,7 +15,8 @@
         android:text="Show our FAV farmers market in town!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_map" />
 
     <fragment
         android:id="@+id/main_map"

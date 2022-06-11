@@ -41,7 +41,7 @@ public class ItemActivity extends AppCompatActivity {
 
         String ingredient= map.get(result);
 
-        //mozda radi?
+
        if(ingredient== "banana") {
            image = (ImageView) findViewById(R.id.image);
            image.setImageResource(R.drawable.banana);
