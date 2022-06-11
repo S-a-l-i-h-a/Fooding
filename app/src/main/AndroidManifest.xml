@@ -20,7 +20,9 @@
         android:theme="@style/Theme.Fooding">
         <activity
             android:name=".InfoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Homescreen"
+            />
         <activity
             android:name=".ProfileActivity"
             android:exported="false"
