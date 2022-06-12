@@ -16,6 +16,6 @@ public interface UserDao {
     @Query("SELECT * FROM users WHERE email=:email LIMIT 1")
     UserEntity getUserByEmail(String email);
 
-    @Query("UPDATE users SET password=:password WHERE email=:email")
-    Void updatePassword(String password,String email);
+    @Query("UPDATE users SET password=:password WHERE id=:id")
+    Void updatePassword(String password,int id);
 }

@@ -16,13 +16,17 @@ public class Homescreen extends AppCompatActivity {
 
     TextView tName;
     Button scan_button;
-    String diet;
+    String diet, username, email, password, diabetes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
         diet= getIntent().getStringExtra("diet");
+        username= getIntent().getStringExtra("username");
+        email= getIntent().getStringExtra("email");
+        password= getIntent().getStringExtra("password");
+        diabetes= getIntent().getStringExtra("diabetes");
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -44,7 +48,12 @@ public class Homescreen extends AppCompatActivity {
                     case R.id.home:
                         return true;
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class)
+                                        .putExtra("username", username)
+                                        .putExtra("email", email)
+                                        .putExtra("password", password)
+                                        .putExtra("diabetes", diabetes)
+                                        .putExtra("diet", diet));
                         overridePendingTransition(0,0);
                         return true;
                    case R.id.info:

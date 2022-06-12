@@ -58,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 userEntity.setDiabetes(diabetes.getText().toString());
                 userEntity.setDiet(spinner_diet.getSelectedItem().toString());
 
+
                 //channel for notification
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
                     NotificationChannel channel= new NotificationChannel(CHANNEL_ID, "My custom channel", NotificationManager.IMPORTANCE_DEFAULT);
@@ -115,7 +116,11 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class).putExtra("diet", spinner_diet.getSelectedItem().toString()));
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class).putExtra("diet", spinner_diet.getSelectedItem().toString())
+                        .putExtra("email", email.getText().toString())
+                        .putExtra("username", username.getText().toString())
+                        .putExtra("password", password.getText().toString())
+                        .putExtra("diabetes", diabetes.getText().toString()));
             }
         });
 

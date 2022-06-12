@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login_button;
     Button register_button2;
     String diet;
+    String username2, email, password2, diabetes;
     public static final String EXTRA_USER_EMAIL = "LoginActivity/EXTRA_USER_EMAIL";
 
     @Override
@@ -27,6 +28,10 @@ public class LoginActivity extends AppCompatActivity {
         login_button= findViewById(R.id.login_button);
         register_button2= findViewById(R.id.register_button2);
         diet= getIntent().getStringExtra("diet");
+        username2= getIntent().getStringExtra("username");
+        email= getIntent().getStringExtra("email");
+        password2= getIntent().getStringExtra("password");
+        diabetes= getIntent().getStringExtra("diabetes");
 
         register_button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +64,13 @@ public class LoginActivity extends AppCompatActivity {
                                 });
                             } else {
                                 String name= userEntity.username;
-                                startActivity(new Intent(LoginActivity.this, Homescreen.class).putExtra("name", name).putExtra("diet", diet));
+                                startActivity(new Intent(LoginActivity.this, Homescreen.class)
+                                        .putExtra("name", name)
+                                        .putExtra("diet", diet)
+                                        .putExtra("email", email)
+                                        .putExtra("password", password2)
+                                        .putExtra("username", username2)
+                                        .putExtra("diabetes", diabetes));
                             }
                         }
                     }).start();
